@@ -137,7 +137,7 @@ public class Aluno extends User{
             esc = sca.nextInt();
             
             if(esc == 1){
-                addBook(Main.listBook);
+                addBook(User.bookList);
             }else if(esc ==2){
                 returnBook();
             }else if(esc ==3){
