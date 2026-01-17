@@ -2,6 +2,7 @@ package livrary;
 
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 
 public class Main {
@@ -17,6 +18,7 @@ public class Main {
         listBook=Book.createdBooks();
         //student = new Aluno();
         
+        try{
             do{
                 System.out.println("\nIniciando programa... \n1-Entrar \n2-Fechar");
                 choose=scanner.nextInt();
@@ -28,9 +30,10 @@ public class Main {
                 }
             }while(choose!=2);
         }
-        
-        
-    
+        catch(InputMismatchException error){
+            System.out.println("Digite apenas números");
+        }
+    }    
     
     
     public static void passwordSystem(){
