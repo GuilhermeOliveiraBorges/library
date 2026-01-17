@@ -4,9 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Adm{
-    protected String login="Adm";
-    protected String password = "0000";
+public class Adm extends User{
+    
     
     //possível erro!!!!!
     Book book = new Book();

@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Aluno extends User{
-    
     private List<Book> books;
-    
     
     //imports
     Scanner sc = new Scanner(System.in);
