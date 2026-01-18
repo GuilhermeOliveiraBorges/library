@@ -40,15 +40,16 @@ public class User {
                 System.out.println("\nIniciando programa... \n1-Entrar \n2-Fechar");
                 choose=scanner.nextInt();
                 
-                if(choose==1){
+                if(choose == 1){
                     passwordSystem();
-                }else if (choose>2){
+                }else if (choose > 2){
                     System.out.println("Escolha um dos valores exibidos");
                 }
-            }while(choose!=2);
+            }while(choose != 2);
         }
         catch(InputMismatchException error){
             System.out.println("Digite apenas números");
+             
         }
     }    
     

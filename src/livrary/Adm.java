@@ -133,34 +133,14 @@ public class Adm extends User{
         }while(esc!=5);
     }
     
-    public void admLayoutBook(List<Book> listBook){
-        Scanner sc = new Scanner(System.in);
-        Book book = new Book("","","","");
-        int esc;
-        
-        do{
-            System.out.println("\nEscolha: \n1-Adicionar livro a biblioteca\n2-Remover livro da biblioteca \n3-Listar livros \n4-Procurar livro \n5-Voltar");
-            esc = sc.nextInt();
-            if(esc==1){
-                book.createBook(listBook);
-            }else if(esc==2){
-                book.removeBook(listBook);
-            }else if(esc==3){
-                book.listBooks(listBook);
-            }else if(esc==4){
-                book.searchBook(listBook);
-            }else if(esc==5){}
-            else if(esc>5){
-                System.out.println("Escolha um dos valores exibidos");
-            }
-            
-        }while(esc!=5);
-    }
+    
     
     public void admLayout(List<Aluno> listStudent, List<Book> listBook){
         int escolha;
         Scanner sc = new Scanner(System.in);
         
+        Book book = new Book("","","");
+        Ebook ebook = new Ebook("","","");
         System.out.println("\nSeja bem vindo a área de administrador!");
         
         do{
@@ -172,7 +152,7 @@ public class Adm extends User{
             if(escolha==1){
                 admLayoutStudent(listStudent);
             }else if(escolha==2){
-                admLayoutBook(listBook);
+                book.layoutBook(listBook);
             }else if(escolha==3){
                 
             }else{
@@ -180,6 +160,7 @@ public class Adm extends User{
             }
         }while(escolha!=3);
     }
+    
     
     public String toString(){
         return login + ", " + password;
