@@ -1,8 +1,9 @@
-package livrary;
+package Books;
 
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class Book {
     protected String title, author, type;
@@ -21,6 +22,7 @@ public class Book {
         this.status = true;
         this.type=type;
     }
+    
     Book(String title, String author, String type, boolean status, String isbn){
         this.title=title;
         this.author = author;
@@ -36,8 +38,6 @@ public class Book {
         this.status = true;
     }
     
-    //importação da lista
-    List<Book> list = new ArrayList<>();
     //getters and setters methods
 
     public String getTitle() {
@@ -82,28 +82,9 @@ public class Book {
     
     //especific methods
     
-    public void createBook(List<Book> book){
-        //variaveis de titulo, autor e isbn
-        String title, author, isbn, type;
-        
-        Scanner sc = new Scanner(System.in);
-       
-        System.out.println("\nDigite o nome do livro");
-        title = sc.nextLine();
-        
-        System.out.println("Digite o nome do autor");
-        author = sc.nextLine();
-        
-        System.out.println("Digite o isbn");
-        isbn = sc.nextLine();
-        
-        System.out.println("Digite o tipo do livro");
-        type = sc.nextLine();
-        
-        book.add(new Book(title, author, type, isbn));
-    }
+    /*
     
-    public void typeBook(List<Book> book){
+    public void typeBook(List<Ebook> ebooks, List<PhysicalBook> books){
         Scanner sc = new Scanner(System.in);
         
         TypeBook typeEbook = TypeBook.EBOOK;
@@ -115,26 +96,25 @@ public class Book {
         String ebookName = typeEbook.toString();
         String fisicoName = typeFisico.toString();
         
-        String type;
         
         do{
             System.out.println("Selecione o tipo do livro");
             type = sc.nextLine();
             
-            if(type.equalsIgnoreCase(ebookName)) ebook.createBook(book);
-            if(type.equalsIgnoreCase(fisicoName)) fisico.createBook(book);
+            if(type.equalsIgnoreCase(ebookName)) ebook.createEbook(ebooks);
+            if(type.equalsIgnoreCase(fisicoName)) fisico.createBooks(books);
             if(!type.equalsIgnoreCase(fisicoName) && !type.equalsIgnoreCase(ebookName)) System.out.println("Escolha entre fisico e ebook");
        }while(!type.equalsIgnoreCase(fisicoName) && !type.equalsIgnoreCase(ebookName));
         
     }
     
-    public void layoutBook(List<Book> listBook){
+    public void layoutBook(List<Ebook> ebooks, List<PhysicalBook> books){
         Scanner sc = new Scanner(System.in);
         int esc;
             do{
                 System.out.println("\nEscolha: \n1-Adicionar livro a biblioteca\n2-Remover livro da biblioteca \n3-Listar livros \n4-Procurar livro \n5-Voltar");
                 esc = sc.nextInt();
-                if(esc == 1) typeBook(listBook);
+                if(esc == 1) typeBook(ebooks, books);
                 if(esc == 2) removeBook(listBook);
                 if(esc == 3) listBooks(listBook);
                 if(esc == 4) searchBook(listBook);
@@ -143,42 +123,23 @@ public class Book {
             
     }
     
-    
-    public static List<Book> createdBooks(){
-        List<Book> books = new ArrayList<>();
-        books.add(new Book("calculus", "michael spivak", "Físico", "978-65-83421-47-2"));
-        books.add(new Book("Ensaio sobre a cegueira", "José Saramago", "Físico", "978-85-91234-08-9"));
-        books.add(new Book("Topology", "Munkres", "Físico", "978-1-4028-9462-6"));
-        books.add(new Book("Morangos mofados","Cario Fernando de Abreu","Físico","978-92-34567-11-4"));
-        books.add(new Book("Analysis 1","Terence Tao","Físico","978-0-596-52068-7"));
-        books.add(new Book("Um defeito de cor","Ana Maria Gonçalves","Físico","978-65-99812-33-1"));
-        return books;
-    }
-    
-    public void removeBook(List<Book> book){
-        //String que chamará o nome do livro
+    public void removeBook(List<Ebook> ebooks, List<PhysicalBook> books){
+        Scanner sc = new Scanner(System.in);
         String titulo;
         
-        Scanner sc = new Scanner(System.in);
-        
-        System.out.println("Escreva o titulo do livro que voce quer remover");
-        //digitação do título
+        System.out.println("Digite o titulo do livro que quer remover");
         titulo = sc.nextLine();
-        //boolean de verificação
-        boolean isBookExist = true;
         
-        //verificação se o livro digitado pertence a biblioteca
-        for(int i=0; i<book.size(); i++){
-            if(titulo.equals(book.get(i).getTitle())){
-                isBookExist = false;
-                System.out.println(book.get(i).getTitle() + " foi removido");
-                book.remove(i);
-            }
-        }
-        //se o livro não pertencer, o método que deve ser exibido
-        if(isBookExist){
-            System.out.println("Livro não encontrado");
-        }
+        ebooks.stream()
+        .filter(b -> b.title.equals(titulo))
+        .forEach(b -> ebooks.remove(b));
+        
+        
+        
+        Optional<PhysicalBook> book = books.stream()
+                .filter(b -> b.title.equals(titulo))
+                .findFirst();
+        
         
     }
     
@@ -219,6 +180,8 @@ public class Book {
             System.out.println("Ainda não há livros na sua biblioteca");
         }
     }
+    */
+    
     
     @Override
     public String toString(){

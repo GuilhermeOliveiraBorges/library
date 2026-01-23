@@ -1,49 +1,19 @@
 package livrary;
-import java.util.Scanner;
+import Books.Book;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Aluno extends User{
     private List<Book> books;
     
-    //imports
-    Scanner sc = new Scanner(System.in);
-    Book book = new Book("","","","");
-    
-    //contructors
-    public Aluno(){
-        
-    }
-    
     public Aluno(String login, String password){
-        this.login = login;
-        this.password = password;
+        super(login, password);
         this.books = new ArrayList<>();
     }
 
    
-    //getters and setters methods
 
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-    
-    public List<Book> getBooks(){
-        return this.books;
-    }
-    
+    /*
     //specific methods
      public void addBook(List<Book> bks){
         getBooks();
@@ -152,5 +122,5 @@ public class Aluno extends User{
     public String toString(){
         return this.login + ", " + password+";";
     }
-    
+    */
 }

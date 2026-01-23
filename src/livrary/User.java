@@ -6,11 +6,12 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class User {
-    protected String login, password;
+    private String login, password;
 
-    static List<Aluno> studentList = new ArrayList<>();
-    static List<Book> bookList = new ArrayList<>();
-    
+   public User(String login, String password){
+       this.login = login;
+       this.password = password;
+   } 
     
     public String getLogin() {
         return login;
@@ -29,10 +30,20 @@ public class User {
     }
     
     
+    public static List<User> createdUsers(){
+        List<User> users = new ArrayList<>();
+        users.add(new User("Maria", "1111"));
+        users.add(new User("Laura", "2222"));
+        users.add(new User("João", "3333"));
+        users.add(new User("Pedro", "4444"));
+        return users;
+    }
+    /*
     public static void passwordLoop(){
         int choose;
         Scanner scanner = new Scanner(System.in);
-        bookList=Book.createdBooks();
+        ebooks = Ebook.createdEbooks();
+        books = PhysicalBook.createdPhysicalBooks();
         //student = new Aluno();
         
         try{
@@ -77,7 +88,7 @@ public class User {
                 verificarLogin=false;
                 if(password.equals(adm.getPassword())){
                     verificarPassword=false;
-                    adm.admLayout(studentList, bookList);
+                    adm.admLayout(studentList, ebooks, books);
                 }
             }
         
@@ -104,5 +115,5 @@ public class User {
                 System.out.println("Senha invalida");
             }
             
-    }
+    }*/
 }

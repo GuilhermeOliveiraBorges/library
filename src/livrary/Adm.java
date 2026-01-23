@@ -1,26 +1,14 @@
 package livrary;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
 public class Adm extends User{
     
-    
-    //possível erro!!!!!
-    Book book = new Book();
-    
-    //constructors
-    public Adm(){
-        
-    }
-    public Adm(String login, String password){
-        this.login = login;
-        this.password=password;
+    Adm(String login, String password){
+        super(login, password);
     }
     
     //getters and setters
-
+    /*
     public Aluno createStudent(){
         //importação do scanner
         Scanner sc = new Scanner(System.in);
@@ -135,7 +123,7 @@ public class Adm extends User{
     
     
     
-    public void admLayout(List<Aluno> listStudent, List<Book> listBook){
+    public void admLayout(List<Aluno> listStudent, List<Ebook> ebooks, List<PhysicalBook> books){
         int escolha;
         Scanner sc = new Scanner(System.in);
         
@@ -152,7 +140,7 @@ public class Adm extends User{
             if(escolha==1){
                 admLayoutStudent(listStudent);
             }else if(escolha==2){
-                book.layoutBook(listBook);
+                book.layoutBook(ebooks, books);
             }else if(escolha==3){
                 
             }else{
@@ -178,5 +166,5 @@ public class Adm extends User{
     }
     public void setPassword(String password){
         this.password = password;
-    }
+    }*/
 }

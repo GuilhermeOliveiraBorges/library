@@ -1,0 +1,48 @@
+package Books;
+
+import Books.Book;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Ebook extends Book{
+    
+    public Ebook(){
+        
+    }
+    
+    public Ebook(String title, String author, String isbn){
+        super(title,author,isbn);
+    }
+    
+    
+    public void createEbook(List<Ebook> book){
+        //variaveis de titulo, autor e isbn
+        String title, author, isbn, type;
+        
+        Scanner sc = new Scanner(System.in);
+       
+        System.out.println("\nDigite o nome do livro");
+        title = sc.nextLine();
+        
+        System.out.println("Digite o nome do autor");
+        author = sc.nextLine();
+        
+        System.out.println("Digite o isbn");
+        isbn = sc.nextLine();
+        
+        //alterar parametros dos construtores!!!!!
+        book.add(new Ebook());
+    }
+    
+    public static List<Ebook> createdEbooks(){
+        List<Ebook> ebooks = new ArrayList<>();
+        
+        ebooks.add(new Ebook("Morangos mofados", "Cario Fernando de Abreu", "978-92-34567-11-4"));
+        ebooks.add(new Ebook("Analysis 1", "Terence Tao", "978-0-596-52068-7"));
+        ebooks.add(new Ebook("Um defeito de cor", "Ana Maria Gonçalves", "978-65-99812-33-1"));
+        
+        return ebooks;
+    }
+    
+}
