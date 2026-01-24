@@ -1,4 +1,4 @@
-package Books;
+package book;
 
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -11,31 +11,12 @@ public class Book {
     protected String isbn;
     
     //constructors
-    Book(){
-        
-    }
-    
-    Book(String title, String author, String type, String isbn){
-        this.title=title;
-        this.author = author;
-        this.isbn = isbn;
-        this.status = true;
-        this.type=type;
-    }
-    
-    Book(String title, String author, String type, boolean status, String isbn){
-        this.title=title;
-        this.author = author;
-        this.type=type;
-        this.status=status;
-        this.isbn = isbn;
-    }
-    
     Book(String title, String author, String isbn){
-        this.title = title;
+        this.title=title;
         this.author = author;
         this.isbn = isbn;
         this.status = true;
+        
     }
     
     //getters and setters methods
@@ -181,10 +162,4 @@ public class Book {
         }
     }
     */
-    
-    
-    @Override
-    public String toString(){
-        return title + ", " + author + ", " + type +", " + isbn + ", status: " + status;
-    }
 }

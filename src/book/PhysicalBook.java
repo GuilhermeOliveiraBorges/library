@@ -1,6 +1,6 @@
-package Books;
+package book;
 
-import Books.Book;
+import book.Book;
 import java.util.List;
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -8,17 +8,11 @@ import java.util.ArrayList;
 public class PhysicalBook extends Book{
     private int quantity;
 
-    public PhysicalBook(){
-        
-    }
+    
     
     public PhysicalBook(String title, String author, String isbn, int quantity){
-        this.title = title;
-        this.author = author;
-        this.isbn = isbn;
+        super(title, author, isbn);
         this.quantity = quantity;
-        if(quantity <= 0) this.status = false;
-        if(quantity > 0) this.status = true;
     }
     
     public int getQuantity() {
@@ -31,7 +25,7 @@ public class PhysicalBook extends Book{
     
     
     
-    public void createBooks(List<PhysicalBook> books){
+    /*public void createBooks(List<PhysicalBook> books){
         //variaveis de titulo, autor e isbn
         String title, author, isbn, type;
         int quantity;
@@ -61,5 +55,5 @@ public class PhysicalBook extends Book{
         books.add(new PhysicalBook("Topology", "Munkres", "978-1-4028-9462-6", 1));
         
         return books;
-    }
+    }*/
 }
