@@ -5,10 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class Book {
+public abstract class Book {
+
     protected String title, author, type;
     protected boolean status;
     protected String isbn;
+    
     
     //constructors
     Book(String title, String author, String isbn){
@@ -18,6 +20,7 @@ public class Book {
         this.status = true;
         
     }
+    
     
     //getters and setters methods
 

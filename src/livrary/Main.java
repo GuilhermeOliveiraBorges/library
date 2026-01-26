@@ -1,5 +1,6 @@
 package livrary;
 
+import book.*;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Optional;
@@ -7,7 +8,7 @@ import java.util.Optional;
 public class Main {
     
     static List<User> listUsers;
-    
+    static List<Book> bookList;
     
     public static void passwordSystem(){
         Scanner sc = new Scanner(System.in);

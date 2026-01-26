@@ -13,26 +13,7 @@ public class Ebook extends Book{
     }
     
     
-    public static void  createEbook(List<Book> books, Scanner sc){
-        String title;
-        
-        do{
-            System.out.println("\nDigite o nome do livro");
-            title = sc.nextLine();
-            if(BookManager.compareTitle(books, title)){
-                System.out.println("Este exempar já pertence a biblioteca");
-            }
-        }while(BookManager.compareTitle(books, title));
-            
-            
-        System.out.println("Digite o nome do autor");
-        String author = sc.nextLine();
-        
-        System.out.println("Digite o isbn");
-        String isbn = sc.nextLine();
-        
-        books.add(new Ebook(title, author, isbn));
-    }
+    
     
     public static List<Book> createdEbooks(List<Book> books){
         books.add(new Ebook("Morangos mofados", "Cario Fernando de Abreu", "978-92-34567-11-4"));
